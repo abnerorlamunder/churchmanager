@@ -1,0 +1,18 @@
+<ion-header>
+	<ion-navbar color="secondary">
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>Groups</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content padding>
+	<ion-list>
+		<button ion-item *ngFor="let group of groups" (click)="gotoGroup(group.name)">
+			<ion-thumbnail item-left>
+				<img ng-if="group.imageUrl" src="{{group.imageUrl}}" width="45px" class="image-list-thumb" />
+			</ion-thumbnail>
+			<h2>{{group.name}}</h2>
+		</button>
+	</ion-list>
+</ion-content>
